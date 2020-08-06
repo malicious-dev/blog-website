@@ -1,0 +1,24 @@
+<%- include('partials/header'); -%>
+<p><%= para1 %></p>
+<div class="card border-primary">
+  <img class="card-img-top" src="holder.js/100px180/" alt="">
+  <div class="card-body">
+    <h4 class="card-title">
+        <%  for (let i=0; i<newlistitems.length; i++){ %>
+            <div class="item" style="margin-top: 2%; margin-bottom: 2%;">
+                <p><%= newlistitems[i] %></p>
+            </div>
+          <%  } %>
+    </h4>
+    <p class="card-text">
+        <%  for (let j=0; j<newlistitem.length; j++){ %>
+            <div class="item">
+                <p><%= newlistitem[j] %></p>
+            </div>
+          <%  } %>
+    </p>
+  </div>
+</div>
+
+
+<%-include('partials/footer'); -%>
