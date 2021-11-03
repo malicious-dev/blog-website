@@ -15,22 +15,22 @@ let item = [""];
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-app.get("/", function(req, res){
-  res.render("home", {para1: homeStartingContent, newlistitems: items, newlistitem: item});
+app.get("/", function (req, res) {
+  res.render("home", { para1: homeStartingContent, newlistitems: items, newlistitem: item });
 });
-app.get("/about", function(req, res){
-  res.render("about", {para2: aboutContent});
+app.get("/about", function (req, res) {
+  res.render("about", { para2: aboutContent });
 });
-app.get("/contact", function(req, res){
-  res.render("contact", {para3:contactContent});
+app.get("/contact", function (req, res) {
+  res.render("contact", { para3: contactContent });
 });
-app.get("/compose", function(req, res){
+app.get("/compose", function (req, res) {
   res.render("compose");
 });
-app.post("/compose", function(req, res){
+app.post("/compose", function (req, res) {
 
   const title = req.body.titlearea;
   const blog = req.body.postarea;
@@ -52,9 +52,9 @@ app.post("/compose", function(req, res){
 
 
 
+var port = process.env.PORT || 5000;
 
 
-
-app.listen(3000, function() {
-  console.log("Server started on port 3000");
+app.listen(port, function () {
+  console.log("Server started on port 5000");
 });
